@@ -1,13 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Upland",
+  "name": "Get JIRA ticket",
   "description": "Fill timesheet",
   "version": "0.0.1",
   "content_scripts": [
     {
       "js": ["build/index.js"],
       "matches": [
-        "https://bao.tenrox.net/TEnterprise/Core/Base/MainFrame2.aspx*"
+        "https://jira.pepfar.net/browse/DAT-4065"
       ],
       "type": "module"
     }
