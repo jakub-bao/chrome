@@ -7,9 +7,13 @@
     {
       "js": ["build/index.js"],
       "matches": [
-        "https://jira.pepfar.net/browse/DAT-4065"
+        "https://jira.pepfar.net/browse/*"
       ],
       "type": "module"
     }
+  ],
+  "permissions" : [
+    "contextMenus",
+    "clipboardWrite"
   ]
 }

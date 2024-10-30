@@ -1,18 +1,21 @@
-window.addEventListener('keydown', ({key}) => {
-    if (key!=='i') return
-    console.log('hi')
+const button = document.createElement('button')
+button.textContent = 'Copy'
+button.onclick = function copyTicket(){
+    const ticketName = document.getElementById('summary-val')!.textContent!
+    const ticketCode = document.getElementById('key-val')!.textContent!
+    copyToClipboard(`[${ticketCode}] ${ticketName}`)
+}
 
-    const input:HTMLInputElement = document.getElementById(`entry-9047-2024-08-01`) as HTMLInputElement
-    input.focus()
-    input.value = '8'
+document.querySelector('.aui-nav-breadcrumbs')!.append(button)
 
-    // const event = new MouseEvent("click", {
-    //     view: window,
-    //     bubbles: true,
-    //     cancelable: true,
-    // });
-    // const cb = document.getElementById("checkbox");
-    // const cancelled = !cb.dispatchEvent(event);
-
-    // input.value = 8
-})
+function copyToClipboard(content:string){
+    const el = document.createElement('textarea')
+    el.value = content
+    el.setAttribute('readonly', '')
+    el.style.position = 'absolute'
+    el.style.left = '-9999px'
+    document.body.appendChild(el)
+    el.select()
+    document.execCommand('copy')
+    document.body.removeChild(el)
+}
