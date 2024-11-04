@@ -1,11 +1,8 @@
-function copyToClipboard(content: string) {
-    const el = document.createElement('textarea')
-    el.value = content
-    el.setAttribute('readonly', '')
-    el.style.position = 'absolute'
-    el.style.left = '-9999px'
-    document.body.appendChild(el)
-    el.select()
-    document.execCommand('copy')
-    document.body.removeChild(el)
+function copyToClipboard(ticketCode: string, ticketName: string):void {
+    navigator.clipboard.write([
+        new ClipboardItem({
+            'text/plain': new Blob([`[${ticketCode}] ${ticketName}`],{type: 'text/plain'}),
+            'text/html': new Blob([`<a href="https://jira.pepfar.net/browse/${ticketCode}">[${ticketCode}]</a> ${ticketName}`],{type: 'text/html'}),
+        }),
+    ]);
 }
