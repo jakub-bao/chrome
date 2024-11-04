@@ -3,15 +3,15 @@
   "name": "Get JIRA ticket",
   "description": "Fill timesheet",
   "version": "0.0.1",
-  "content_scripts": [
-    {
-      "js": ["build/index.js"],
-      "matches": [
-        "https://jira.pepfar.net/browse/*"
-      ],
+  "content_scripts": [{
+      "js": ["build/view.js"],
+      "matches": ["https://jira.pepfar.net/browse/*"],
       "type": "module"
-    }
-  ],
+  },{
+    "js": ["build/list.js"],
+    "matches": ["https://jira.pepfar.net/issues/*"],
+    "type": "module"
+  }],
   "permissions" : [
     "contextMenus",
     "clipboardWrite"
