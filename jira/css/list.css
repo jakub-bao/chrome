@@ -1,0 +1,10 @@
+.list-copy{
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.list-copy:hover{
+    background-color: lightgray;
+}

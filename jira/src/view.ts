@@ -1,5 +1,3 @@
-import {copyToClipboard} from "./copyToClipboard";
-
 const button = document.createElement('button')
 button.textContent = 'Copy'
 button.onclick = function copyTicket(){

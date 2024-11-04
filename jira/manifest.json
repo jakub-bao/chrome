@@ -8,7 +8,13 @@
       "matches": ["https://jira.pepfar.net/browse/*"],
       "type": "module"
   },{
-    "js": ["build/list.js"],
+    "js": [
+      "build/list.js",
+      "build/copyToClipboard.js"
+    ],
+    "css": [
+      "css/list.css"
+    ],
     "matches": ["https://jira.pepfar.net/issues/*"],
     "type": "module"
   }],
